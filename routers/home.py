@@ -1,10 +1,16 @@
-from fastapi import APIRouter, Depends, HTTPException
+# routers/home.py
+
+from fastapi import APIRouter, Depends
 from fastapi.responses import HTMLResponse
-from sqlalchemy.orm import Session
-from ..crud import oauth2_scheme
+from fastapi.security import OAuth2PasswordBearer
+
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 
 router = APIRouter()
 
-@router.get("/home/comprar")
-async def home_comprar(request: HTMLResponse, token: str = Depends(oauth2_scheme)):
-    return {"message": "Compra realizada com sucesso!"}
+# Inclua a lógica de autenticação aqui
+
+@router.get("/home/comprar", response_class=HTMLResponse)
+async def home():
+    return templates.TemplateResponse("index.html", {"request": request})

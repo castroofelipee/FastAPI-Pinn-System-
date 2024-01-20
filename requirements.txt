@@ -1,3 +1,5 @@
-fastapi 
+fastapi
 sqlalchemy
-Jinja2Templates
+Jinja2
+uvicorn
+databases
