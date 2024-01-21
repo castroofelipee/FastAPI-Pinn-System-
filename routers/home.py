@@ -1,5 +1,3 @@
-# routers/home.py
-
 from fastapi import APIRouter, Depends
 from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordBearer
